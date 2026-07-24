@@ -1,0 +1,26 @@
+{
+  "name": "@r1c/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts",
+    "./button": "./src/button.tsx"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "lint": "eslint src",
+    "check-types": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9",
+    "@types/react": "^19",
+    "eslint": "^9",
+    "typescript": "5.9.2",
+    "typescript-eslint": "^8"
+  }
+}
