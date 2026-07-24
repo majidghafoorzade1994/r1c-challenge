@@ -1,0 +1,26 @@
+@import "../../theme.css";
+
+.r1c-field {
+  box-sizing: border-box;
+  display: grid;
+  font-family: var(--r1c-font-family);
+  gap: 8px;
+  width: 100%;
+}
+
+.r1c-field__label {
+  color: var(--r1c-color-text);
+  font-size: 14px;
+}
+
+.r1c-field__label span {
+  color: var(--r1c-color-danger);
+  margin-inline-start: 2px;
+}
+
+.r1c-field__error {
+  color: var(--r1c-color-danger);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}

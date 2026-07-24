@@ -1,0 +1,31 @@
+@import "../../theme.css";
+
+.r1c-link-button {
+  box-sizing: border-box;
+  color: #066caf;
+  cursor: pointer;
+  font-family: var(--r1c-font-family);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.r1c-link-button:hover:not([aria-disabled="true"]) {
+  color: #075481;
+  text-decoration: underline;
+}
+
+.r1c-link-button:active:not([aria-disabled="true"]) {
+  color: #063b5a;
+}
+
+.r1c-link-button:focus-visible {
+  outline: 3px solid rgb(7 156 156 / 28%);
+  outline-offset: 2px;
+}
+
+.r1c-link-button[aria-disabled="true"] {
+  color: #95d2f2;
+  cursor: not-allowed;
+}

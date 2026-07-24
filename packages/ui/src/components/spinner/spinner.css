@@ -1,0 +1,25 @@
+@import "../../theme.css";
+
+.r1c-spinner {
+  animation: r1c-spin 700ms linear infinite;
+  border: 2px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 999px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  opacity: 0.75;
+}
+
+@keyframes r1c-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .r1c-spinner {
+    animation-duration: 1.5s;
+  }
+}

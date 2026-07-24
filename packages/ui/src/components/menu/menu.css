@@ -1,0 +1,54 @@
+@import "../../theme.css";
+
+.r1c-menu {
+  background: #fff;
+  border-radius: var(--r1c-radius-md);
+  box-sizing: border-box;
+  display: grid;
+  font-family: var(--r1c-font-family);
+  gap: 6px;
+  min-width: 220px;
+  padding: 10px;
+}
+
+.r1c-menu[data-floating="true"] {
+  box-shadow: var(--r1c-shadow-menu);
+}
+
+.r1c-menu__item {
+  background: transparent;
+  border: 0;
+  border-radius: var(--r1c-radius-sm);
+  color: var(--r1c-color-text);
+  cursor: pointer;
+  font: 16px/1.4 var(--r1c-font-family);
+  min-height: 40px;
+  padding: 8px 10px;
+  text-align: start;
+  width: 100%;
+}
+
+.r1c-menu__item:hover:not(:disabled),
+.r1c-menu__item.is-active {
+  background: var(--r1c-color-surface-muted);
+}
+
+.r1c-menu__item:focus-visible {
+  outline: 3px solid rgb(7 156 156 / 28%);
+  outline-offset: 2px;
+}
+
+.r1c-menu__item:disabled {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.r1c-menu__loading {
+  align-items: center;
+  color: var(--r1c-color-muted);
+  display: flex;
+  font: 16px/1.4 var(--r1c-font-family);
+  gap: 10px;
+  min-height: 40px;
+  padding: 8px 10px;
+}

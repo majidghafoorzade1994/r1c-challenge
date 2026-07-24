@@ -1,0 +1,43 @@
+@import "../../theme.css";
+
+.r1c-input {
+  background: #fff;
+  border: 1px solid var(--r1c-color-border);
+  border-radius: var(--r1c-radius-sm);
+  box-sizing: border-box;
+  color: var(--r1c-color-text);
+  font-family: var(--r1c-font-family);
+  font-size: 16px;
+  height: 40px;
+  line-height: 1.5;
+  padding: 0 12px;
+  transition:
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+  width: 100%;
+}
+
+.r1c-input::placeholder {
+  color: #cfcfcf;
+}
+
+.r1c-input:hover:not(:disabled) {
+  border-color: #aaa;
+}
+
+.r1c-input:focus {
+  border-color: var(--r1c-color-primary);
+  box-shadow: 0 0 0 1px var(--r1c-color-primary);
+  outline: none;
+}
+
+.r1c-input[aria-invalid="true"] {
+  border-color: var(--r1c-color-danger);
+  box-shadow: 0 0 0 1px var(--r1c-color-danger);
+}
+
+.r1c-input:disabled {
+  background: #fff;
+  color: #ccc;
+  cursor: not-allowed;
+}

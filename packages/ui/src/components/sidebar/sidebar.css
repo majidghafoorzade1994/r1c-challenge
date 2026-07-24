@@ -1,0 +1,42 @@
+@import "../../theme.css";
+
+.r1c-sidebar {
+  border-inline-end: 1px solid #e3e3e3;
+  box-sizing: border-box;
+  font-family: var(--r1c-font-family);
+  min-height: 100%;
+  padding: 16px;
+  width: 240px;
+}
+
+.r1c-sidebar nav {
+  display: grid;
+  gap: 6px;
+}
+
+.r1c-sidebar__item {
+  align-items: center;
+  border-radius: 0;
+  color: var(--r1c-color-text);
+  display: flex;
+  font-size: 16px;
+  font-weight: 600;
+  gap: 10px;
+  min-height: 44px;
+  padding: 10px 12px;
+  text-decoration: none;
+}
+
+.r1c-sidebar__item:hover {
+  background: var(--r1c-color-surface-muted);
+}
+
+.r1c-sidebar__item:focus-visible {
+  outline: 3px solid rgb(7 156 156 / 28%);
+  outline-offset: 2px;
+}
+
+.r1c-sidebar__item.is-active {
+  background: var(--r1c-color-primary-soft);
+  color: #078989;
+}

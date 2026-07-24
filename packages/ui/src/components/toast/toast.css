@@ -1,0 +1,26 @@
+@import "../../theme.css";
+
+.r1c-toast {
+  align-items: baseline;
+  border-radius: var(--r1c-radius-md);
+  box-sizing: border-box;
+  display: inline-flex;
+  font-family: var(--r1c-font-family);
+  font-size: 15px;
+  gap: 6px;
+  padding: 15px 18px;
+}
+
+.r1c-toast strong {
+  font-size: 16px;
+}
+
+.r1c-toast--success {
+  background: var(--r1c-color-success-soft);
+  color: var(--r1c-color-success);
+}
+
+.r1c-toast--error {
+  background: var(--r1c-color-danger-soft);
+  color: var(--r1c-color-danger);
+}
