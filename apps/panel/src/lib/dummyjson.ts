@@ -8,18 +8,48 @@ type DummyJsonErrorBody = {
 type DummyJsonUsersResponse = {
   users: Array<{
     email: string;
+    id?: number;
     username: string;
   }>;
 };
 
+export type DummyJsonPost = {
+  body: string;
+  description?: string;
+  id: number;
+  reactions?: {
+    dislikes: number;
+    likes: number;
+  };
+  tags: string[];
+  title: string;
+  userId: number;
+  views?: number;
+};
+
+export type DummyJsonPostsResponse = {
+  limit: number;
+  posts: DummyJsonPost[];
+  skip: number;
+  total: number;
+};
+
+export type DummyJsonUserSummary = {
+  id: number;
+  username: string;
+};
+
 export type DummyJsonAuthUser = {
   accessToken: string;
+  refreshToken: string;
+} & DummyJsonUser;
+
+export type DummyJsonUser = {
   email: string;
   firstName: string;
   id: number;
   image: string;
   lastName: string;
-  refreshToken: string;
   username: string;
 };
 
@@ -57,7 +87,7 @@ async function dummyJsonRequest<T>(
 
   if (!response.ok) {
     throw new DummyJsonError(
-      body.message ?? "Authentication service request failed",
+      body.message ?? "DummyJSON request failed",
       response.status,
     );
   }
@@ -120,5 +150,88 @@ export function registerUser(input: {
   return dummyJsonRequest<DummyJsonCreatedUser>("/users/add", {
     body: JSON.stringify(input),
     method: "POST",
+  });
+}
+
+export function getAuthUser(
+  accessToken: string,
+): Promise<DummyJsonUser> {
+  return dummyJsonRequest<DummyJsonUser>("/auth/me", {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+}
+
+export function getPosts(
+  page = 1,
+  limit = 10,
+): Promise<DummyJsonPostsResponse> {
+  const query = new URLSearchParams({
+    limit: String(limit),
+    skip: String((page - 1) * limit),
+  });
+
+  return dummyJsonRequest<DummyJsonPostsResponse>(
+    `/posts?${query.toString()}`,
+  );
+}
+
+export function getPost(id: number): Promise<DummyJsonPost> {
+  return dummyJsonRequest<DummyJsonPost>(`/posts/${id}`);
+}
+
+export function getPostTags(): Promise<string[]> {
+  return dummyJsonRequest<string[]>("/posts/tag-list");
+}
+
+export async function getUserSummaries(): Promise<DummyJsonUserSummary[]> {
+  const query = new URLSearchParams({
+    limit: "0",
+    select: "id,username",
+  });
+  const result = await dummyJsonRequest<{
+    users: DummyJsonUserSummary[];
+  }>(`/users?${query.toString()}`);
+
+  return result.users;
+}
+
+export function createPost(input: {
+  body: string;
+  description?: string;
+  tags: string[];
+  title: string;
+  userId: number;
+}): Promise<DummyJsonPost> {
+  return dummyJsonRequest<DummyJsonPost>("/posts/add", {
+    body: JSON.stringify(input),
+    method: "POST",
+  });
+}
+
+export function updatePost(
+  id: number,
+  input: {
+    body: string;
+    description?: string;
+    tags: string[];
+    title: string;
+  },
+): Promise<DummyJsonPost> {
+  return dummyJsonRequest<DummyJsonPost>(`/posts/${id}`, {
+    body: JSON.stringify(input),
+    method: "PUT",
+  });
+}
+
+export function deletePost(id: number): Promise<
+  DummyJsonPost & {
+    deletedOn: string;
+    isDeleted: boolean;
+  }
+> {
+  return dummyJsonRequest(`/posts/${id}`, {
+    method: "DELETE",
   });
 }

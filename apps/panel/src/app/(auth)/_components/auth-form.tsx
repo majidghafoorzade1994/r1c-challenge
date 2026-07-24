@@ -1,6 +1,7 @@
 "use client";
 
-import { Button, Field, Input, LinkButton, Toast } from "@r1c/ui";
+import { Button, Field, Input, Toast } from "@r1c/ui";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { FormEvent } from "react";
 import { useState } from "react";
@@ -82,7 +83,7 @@ export function AuthForm({ mode }: AuthFormProps) {
         throw new Error(result.message ?? "Authentication failed");
       }
 
-      router.push(isLogin ? "/" : "/login");
+      router.push(isLogin ? "/articles" : "/login");
       router.refresh();
     } catch (error) {
       setApiError(
@@ -177,9 +178,12 @@ export function AuthForm({ mode }: AuthFormProps) {
                   ? "Don’t have an account?"
                   : "Have an account?"}
               </span>
-              <LinkButton href={isLogin ? "/register" : "/login"}>
+              <Link
+                className="auth-form__link"
+                href={isLogin ? "/register" : "/login"}
+              >
                 {isLogin ? "Sign up now" : "Sign in"}
-              </LinkButton>
+              </Link>
             </p>
           </form>
         </div>

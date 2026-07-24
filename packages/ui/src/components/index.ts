@@ -35,6 +35,7 @@ export {
   type SidebarProps,
 } from "./sidebar";
 export { Spinner, type SpinnerProps } from "./spinner";
+export { Textarea, type TextareaProps } from "./textarea";
 export {
   Toast,
   type ToastProps,

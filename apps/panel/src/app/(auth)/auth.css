@@ -65,8 +65,22 @@
   margin: 0;
 }
 
-.auth-form__switch .r1c-link-button {
+.auth-form__link {
+  color: #066caf;
   font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 120ms ease;
+}
+
+.auth-form__link:hover {
+  color: #075481;
+  text-decoration: underline;
+}
+
+.auth-form__link:focus-visible {
+  outline: 3px solid rgb(7 156 156 / 28%);
+  outline-offset: 2px;
 }
 
 .auth-toast {
