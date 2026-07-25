@@ -34,6 +34,9 @@ npm run storybook --workspace=@r1c/ui
 npm run build-storybook --workspace=@r1c/ui
 ```
 
+Storybook uses port `6006`. Its development server is independent from the
+Turborepo `dev` task and must be started explicitly.
+
 ## Turborepo behavior
 
 ### Build
@@ -152,6 +155,15 @@ There is no automated test suite, so perform at least:
 - Article table scrolls horizontally.
 - Article form becomes single-column.
 - Modal remains usable below 640px.
+
+### Shared UI and Storybook
+
+- Every public component has a discoverable story.
+- Controls update supported props without rendering errors.
+- Stateful modal and pagination examples remain interactive.
+- Documentation pages render introduction and design-token content.
+- The Accessibility panel has no unexplained violations.
+- `npm run build-storybook` produces `packages/ui/storybook-static`.
 
 ## Final verification
 

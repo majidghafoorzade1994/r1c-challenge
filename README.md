@@ -11,6 +11,7 @@ The application includes:
 - Article creation, editing, and deletion flows
 - API proxy routes that keep authentication tokens out of client-side JavaScript
 - A reusable, typed UI package with co-located plain CSS
+- Live Storybook documentation for every shared UI component
 
 ## Repository layout
 

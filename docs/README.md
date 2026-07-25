@@ -30,7 +30,7 @@ This directory contains the detailed technical reference for the R1C Blog Admin 
 | `article-management.md`   | Listing, pagination, tags, create/edit/delete behavior, and UI state         |
 | `api-reference.md`        | Internal route-handler contracts and DummyJSON endpoint mapping              |
 | `ui-library.md`           | `@r1c/ui` exports, component contracts, styling, and extension process       |
-| `storybook.md`            | Live component catalog, stories, generated docs, and accessibility checks    |
+| `storybook.md`            | Live catalog, React/Vite setup, stories, static builds, and troubleshooting  |
 | `styling.md`              | Plain CSS architecture, design tokens, responsive rules, and Tailwind status |
 | `development-workflow.md` | Commands, Turborepo tasks, type checks, linting, and manual QA               |
 | `deployment.md`           | Production runtime, environment, cookies, and operational checklist          |
@@ -47,5 +47,6 @@ Update the relevant document whenever a change affects:
 - Authentication or cookie behavior
 - DummyJSON request or response mapping
 - A known limitation or operational assumption
+- Storybook configuration, addons, stories, or component documentation
 
 The root [README](../README.md) should remain a short entry point. Detailed implementation notes belong here.

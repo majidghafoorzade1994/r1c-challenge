@@ -144,6 +144,28 @@ component-name/
 └── index.ts
 ```
 
+## Storybook documentation structure
+
+```text
+packages/ui/
+|-- .storybook/
+|   |-- main.ts
+|   |-- preview.ts
+|   `-- preview.css
+`-- src/
+    |-- stories/
+    |   |-- introduction.mdx
+    |   `-- design-tokens.mdx
+    `-- components/
+        `-- component-name/
+            `-- component-name.stories.tsx
+```
+
+Stories are co-located with components. The `src/stories` directory is reserved
+for package-level and foundation documentation that is not owned by one
+component. Static Storybook output is generated in
+`packages/ui/storybook-static` and ignored by Git.
+
 ## Naming conventions
 
 - Route folders use lowercase URL-oriented names.
@@ -152,3 +174,4 @@ component-name/
 - Private route helpers live in `_components`.
 - Dynamic route parameters use bracket syntax such as `[id]` and `[page]`.
 - CSS classes use the `r1c-` prefix in the UI package and semantic page-specific prefixes in the panel.
+- Component story files use the `component-name.stories.tsx` suffix.

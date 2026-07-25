@@ -26,6 +26,18 @@ The build produces:
 - Next.js output under `apps/panel/.next`
 - UI declarations under `packages/ui/dist`
 
+## Deploy component documentation
+
+Storybook is independent from the panel deployment. Build its static site with:
+
+```bash
+npm run build-storybook
+```
+
+Deploy the contents of `packages/ui/storybook-static` to any static hosting
+service. No Next.js runtime, environment variable, authentication cookie, or
+DummyJSON access is required for the component catalog.
+
 ## Environment
 
 Optional production variable:
@@ -82,6 +94,7 @@ An upstream outage affects both login and dashboard rendering. No cache or offli
 npm run lint
 npm run check-types
 npm run build
+npm run build-storybook
 ```
 
 ### After deployment

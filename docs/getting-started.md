@@ -64,6 +64,19 @@ http://localhost:3000
 
 The root `/` route redirects to `/articles`. Without a valid session, the protected dashboard layout redirects again to `/login`.
 
+## Start component documentation
+
+Run Storybook independently from the panel:
+
+```bash
+npm run storybook
+```
+
+The component catalog is available at
+[http://localhost:6006](http://localhost:6006). It does not require the panel
+server or DummyJSON. See the [Storybook guide](storybook.md) for its
+architecture, authoring conventions, static build, and troubleshooting.
+
 ## Test login
 
 Use an existing user from DummyJSON. A known sample account is:
@@ -104,6 +117,7 @@ Before opening a pull request or handing off a change:
 npm run lint
 npm run check-types
 npm run build
+npm run build-storybook
 ```
 
 There is currently no automated test command. See [Development workflow](development-workflow.md) for the manual verification checklist.
@@ -124,6 +138,18 @@ Use Node.js 20.9 or newer.
 ### Workspace package cannot be resolved
 
 Run `npm install` from the repository root and confirm `@r1c/ui` appears in the npm workspace graph.
+
+### Storybook reports incompatible React versions
+
+React and React DOM are intentionally pinned to `19.2.4`. Stop Storybook, run
+`npm install` from the repository root, and confirm the installed graph:
+
+```bash
+npm ls react react-dom --all
+```
+
+Restart Storybook after reinstalling because Vite caches pre-bundled
+dependencies for the lifetime of the development process.
 
 ### DummyJSON cannot be reached
 

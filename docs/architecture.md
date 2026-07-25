@@ -17,6 +17,8 @@ The repository is an npm-workspace monorepo coordinated by Turborepo.
 | CSS tooling still present | Tailwind CSS 4 through PostCSS                        |
 | Linting                   | ESLint 9, Next.js ESLint, TypeScript ESLint           |
 | Formatting                | Prettier 3                                            |
+| Component documentation   | Storybook 10 with React Vite                          |
+| Accessibility tooling     | Storybook Accessibility addon                         |
 | External API              | DummyJSON                                             |
 
 ```mermaid
@@ -59,6 +61,8 @@ Owns:
 - Shared design tokens
 - Lucide icon re-exports
 - Small class-name composition utilities
+- Co-located component stories
+- Storybook configuration and foundation documentation
 
 It does not own:
 

@@ -12,6 +12,11 @@ React peer: ^19.0.0
 
 The panel declares `@r1c/ui: "*"` and resolves it through npm workspaces.
 
+The package keeps React as a broad peer dependency for consumers, while local
+development uses exactly `react@19.2.4` and `react-dom@19.2.4`. The repository
+root pins the same pair so npm and Storybook resolve a single compatible
+runtime.
+
 ## Live component catalog
 
 Start Storybook from the repository root:

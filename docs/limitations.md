@@ -105,7 +105,12 @@ Areas to improve:
 - Restore focus after modal close
 - Menu keyboard navigation
 - Live-region behavior for route-level success messages
-- Automated accessibility testing
+- CI-enforced accessibility regression testing
+
+Storybook now includes `@storybook/addon-a11y` for automated checks during
+component development. Those checks are not yet executed as a required CI task,
+so accessibility regressions can still be merged unless reviewers run the
+catalog manually.
 
 ## Styling/tooling overlap
 
