@@ -2,13 +2,15 @@
 
 ## Root scripts
 
-| Command               | Turborepo task          | Purpose                                   |
-| --------------------- | ----------------------- | ----------------------------------------- |
-| `npm run dev`         | `turbo run dev`         | Start persistent development servers      |
-| `npm run build`       | `turbo run build`       | Build every workspace in dependency order |
-| `npm run lint`        | `turbo run lint`        | Run workspace linters                     |
-| `npm run check-types` | `turbo run check-types` | Run TypeScript checks                     |
-| `npm run format`      | Prettier                | Format `ts`, `tsx`, and `md` files        |
+| Command                   | Turborepo task          | Purpose                                   |
+| ------------------------- | ----------------------- | ----------------------------------------- |
+| `npm run dev`             | `turbo run dev`         | Start persistent development servers      |
+| `npm run build`           | `turbo run build`       | Build every workspace in dependency order |
+| `npm run lint`            | `turbo run lint`        | Run workspace linters                     |
+| `npm run check-types`     | `turbo run check-types` | Run TypeScript checks                     |
+| `npm run format`          | Prettier                | Format `ts`, `tsx`, and `md` files        |
+| `npm run storybook`       | UI workspace            | Start live component documentation        |
+| `npm run build-storybook` | UI workspace            | Build static component documentation      |
 
 ## Workspace scripts
 
@@ -28,6 +30,8 @@ npm run check-types --workspace=panel
 npm run build --workspace=@r1c/ui
 npm run lint --workspace=@r1c/ui
 npm run check-types --workspace=@r1c/ui
+npm run storybook --workspace=@r1c/ui
+npm run build-storybook --workspace=@r1c/ui
 ```
 
 ## Turborepo behavior
@@ -114,7 +118,8 @@ It does not format CSS or JSON.
 4. Move only reusable presentation primitives into `packages/ui`.
 5. Add or update documentation with route, API, environment, or public UI changes.
 6. Run workspace-level checks while iterating.
-7. Run all root checks before handoff.
+7. Build Storybook when shared components or stories change.
+8. Run all root checks before handoff.
 
 ## Manual QA checklist
 
@@ -154,6 +159,7 @@ There is no automated test suite, so perform at least:
 npm run lint
 npm run check-types
 npm run build
+npm run build-storybook
 git diff --check
 ```
 

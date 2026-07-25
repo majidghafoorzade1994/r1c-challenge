@@ -12,10 +12,11 @@ This directory contains the detailed technical reference for the R1C Blog Admin 
 6. [Article management](article-management.md)
 7. [API reference](api-reference.md)
 8. [UI library](ui-library.md)
-9. [Styling](styling.md)
-10. [Development workflow](development-workflow.md)
-11. [Deployment](deployment.md)
-12. [Limitations](limitations.md)
+9. [Storybook](storybook.md)
+10. [Styling](styling.md)
+11. [Development workflow](development-workflow.md)
+12. [Deployment](deployment.md)
+13. [Limitations](limitations.md)
 
 ## Documentation map
 
@@ -29,6 +30,7 @@ This directory contains the detailed technical reference for the R1C Blog Admin 
 | `article-management.md`   | Listing, pagination, tags, create/edit/delete behavior, and UI state         |
 | `api-reference.md`        | Internal route-handler contracts and DummyJSON endpoint mapping              |
 | `ui-library.md`           | `@r1c/ui` exports, component contracts, styling, and extension process       |
+| `storybook.md`            | Live component catalog, stories, generated docs, and accessibility checks    |
 | `styling.md`              | Plain CSS architecture, design tokens, responsive rules, and Tailwind status |
 | `development-workflow.md` | Commands, Turborepo tasks, type checks, linting, and manual QA               |
 | `deployment.md`           | Production runtime, environment, cookies, and operational checklist          |

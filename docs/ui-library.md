@@ -12,6 +12,19 @@ React peer: ^19.0.0
 
 The panel declares `@r1c/ui: "*"` and resolves it through npm workspaces.
 
+## Live component catalog
+
+Start Storybook from the repository root:
+
+```bash
+npm run storybook
+```
+
+Browse the interactive component documentation at
+[http://localhost:6006](http://localhost:6006). It includes component variants,
+prop controls, generated API documentation, and accessibility feedback. See the
+[Storybook guide](storybook.md) for configuration and authoring conventions.
+
 ## Distribution model
 
 The package exports source TypeScript:
@@ -191,18 +204,21 @@ It is an internal utility and is not exported from the package root.
 2. Add:
    - `component-name.tsx`
    - `component-name.css`
+   - `component-name.stories.tsx`
    - `index.ts`
 3. Import the local stylesheet from the component.
 4. Use `r1c-` prefixed CSS classes.
 5. Reuse variables from `src/theme.css`.
 6. Export the component and types from its local `index.ts`.
 7. Export it from `src/components/index.ts`.
-8. Run:
+8. Document its default state and relevant variants in Storybook.
+9. Run:
 
 ```bash
 npm run lint --workspace=@r1c/ui
 npm run check-types --workspace=@r1c/ui
 npm run build --workspace=@r1c/ui
+npm run build-storybook
 ```
 
 The package wildcard export makes `@r1c/ui/component-name` available when a local index exists.

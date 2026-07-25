@@ -1,0 +1,37 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Introduction/Overview" />
+
+# `@r1c/ui`
+
+The shared component library for the R1C Blog Admin Panel.
+
+This Storybook is the live component reference. Use it to:
+
+- Explore supported component props through Controls
+- Compare visual variants and states
+- Check keyboard and accessibility behavior
+- Review responsive component behavior
+- Verify changes independently from the panel application
+
+## Importing components
+
+```tsx
+import { Button, Field, Input, Toast } from "@r1c/ui";
+```
+
+Component subpaths are also available:
+
+```tsx
+import { Button } from "@r1c/ui/button";
+```
+
+## Styling
+
+Each component imports its own plain CSS file. Shared colors, radii, typography, and shadows come from `src/theme.css`.
+
+Application-specific layout and domain behavior should remain outside this package.
+
+## Accessibility
+
+The accessibility addon runs against every story. New components should use native HTML semantics first, expose visible focus states, and document any remaining interaction limitations.

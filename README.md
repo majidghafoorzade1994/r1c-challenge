@@ -39,6 +39,14 @@ npm run dev
 
 The panel is available at [http://localhost:3000](http://localhost:3000).
 
+Run the live UI component documentation separately:
+
+```bash
+npm run storybook
+```
+
+Storybook is available at [http://localhost:6006](http://localhost:6006).
+
 DummyJSON sample credentials:
 
 ```text
@@ -56,6 +64,8 @@ npm run build        # Build every workspace
 npm run lint         # Lint every workspace
 npm run check-types  # Type-check every workspace
 npm run format       # Format TypeScript and Markdown files
+npm run storybook    # Start live UI component documentation
+npm run build-storybook # Build static component documentation
 ```
 
 Run a command for one workspace:
@@ -91,6 +101,7 @@ Start with the [documentation index](docs/README.md).
 | Article list and mutation flows          | [Article management](docs/article-management.md)     |
 | Internal and upstream endpoints          | [API reference](docs/api-reference.md)               |
 | Shared components and exports            | [UI library](docs/ui-library.md)                     |
+| Live component catalog and stories       | [Storybook](docs/storybook.md)                       |
 | CSS organization and design tokens       | [Styling](docs/styling.md)                           |
 | Scripts and contribution workflow        | [Development workflow](docs/development-workflow.md) |
 | Runtime and release requirements         | [Deployment](docs/deployment.md)                     |

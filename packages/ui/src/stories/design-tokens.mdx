@@ -1,0 +1,37 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Foundations/Design tokens" />
+
+# Design tokens
+
+The component library exposes shared CSS custom properties from `src/theme.css`.
+
+## Colors
+
+| Token                       | Value     | Use                            |
+| --------------------------- | --------- | ------------------------------ |
+| `--r1c-color-primary`       | `#079c9c` | Primary actions                |
+| `--r1c-color-primary-soft`  | `#d9f3f3` | Selected and soft surfaces     |
+| `--r1c-color-danger`        | `#e31b23` | Errors and destructive actions |
+| `--r1c-color-danger-soft`   | `#fde2e3` | Error surfaces                 |
+| `--r1c-color-success`       | `#12ad50` | Success text                   |
+| `--r1c-color-success-soft`  | `#e2f8e9` | Success surfaces               |
+| `--r1c-color-text`          | `#303030` | Primary text                   |
+| `--r1c-color-muted`         | `#858585` | Secondary text                 |
+| `--r1c-color-border`        | `#cfcfcf` | Control borders                |
+| `--r1c-color-surface-muted` | `#f0f0f0` | Muted surfaces                 |
+
+## Shape and typography
+
+| Token               | Value                          |
+| ------------------- | ------------------------------ |
+| `--r1c-radius-sm`   | `8px`                          |
+| `--r1c-radius-md`   | `12px`                         |
+| `--r1c-shadow-menu` | `0 10px 28px rgb(0 0 0 / 12%)` |
+| `--r1c-font-family` | `Arial, Helvetica, sans-serif` |
+
+Import the theme directly when tokens are needed without a component:
+
+```css
+@import "@r1c/ui/theme.css";
+```
